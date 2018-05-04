@@ -84,15 +84,16 @@ for component in componentsChosen:
         estimateComponents += "PROCESSOR:\t p7  \t $200\n"
         componentsChosen[componentIndex] = "p7"
         componentIndex += 1
-
-print("*** ESTIMATE NUMBER: "+str(estimateNumber+1)+" ***")
+estimateNumber +=1
+print("*** ESTIMATE NUMBER: "+str(estimateNumber)+" ***")
 print("COMPONENT\t OPTION\t PRICE")
 print(estimateComponents+"\nTOTAL COST: $"+str(totalPrice*1.2)+"\n**************************\n")
-print("PRE-RELEASE 2018 - TASK 2\n")
 
+print("PRE-RELEASE 2018 - TASK 2\n")
 p3Stock = p5Stock = p7Stock = ram16Stock = ram32Stock = sto1tbStock = sto2tbStock = sc19Stock = sc23Stock = miniStock = midiStock = usb2Stock = usb4Stock = 10
 stockCheck = 0
 ordersNumbers = list()
+customerName = ""
 
 print("*** STOCK CHECK ***")
 for component in componentsChosen:
@@ -106,5 +107,5 @@ if stockCheck == 6:
     for component in componentsChosen:
         exec(str(component+"Stock -= 1"))
         print(str(component)+" -> "+str(eval(component+"Stock")))
-
-#ordersNumbers.append(estimateNumber)
+ordersNumbers.append(estimateNumber)
+customerName = input("\nEnter your name and last name to produce your final estimated: ")
